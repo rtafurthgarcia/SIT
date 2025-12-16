@@ -10,7 +10,7 @@
             
 
 Usage:
-  python -m SIT [-v] [--server] <subcommand> ...
+  sit [-v] [--server] <subcommand> ...
 
 Generate Software Bill of Materials (SBOM) for a software package.
 
@@ -26,6 +26,7 @@ subcommands:
     convert      Convert SBOM between different formats
 ```
 # Note
+
 I haven't changed anything per se, all I've done with this fork is making it pipx'able.
 
 # Installation
@@ -48,6 +49,14 @@ cd SIT
 poetry install  # install dependencies
 poetry shell  # activate the virtual environment
 python3 -m SIT --help  # check if SIT is installed successfully
+```
+
+## Deploy with pipx 
+
+Make sure to have pipx installed. You may follow their [tutorial.](https://github.com/pypa/pipx#install-pipx)
+
+```
+pipx install "git+https://github.com/rtafurthgarcia/SIT.git"
 ```
 
 ## Deploy with Docker
@@ -192,3 +201,4 @@ If you use SIT docker:
 ```shell
 docker run --rm -v /localpath/input:/input -v /localpath/output:/output gmscofield/sit convert -i /input/sbom.json -o /output/sbom.json --model spdx
 ```
+
